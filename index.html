@@ -1,9 +1,181 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>AAC Jet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AAC Jet!</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #18202a;
+        --muted: #596575;
+        --line: #dce3eb;
+        --paper: #f7f9fc;
+        --accent: #0f766e;
+        --accent-dark: #0b5f59;
+        --warm: #f3b23f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 520px);
+        gap: clamp(28px, 6vw, 72px);
+        align-items: center;
+        width: min(1120px, calc(100% - 36px));
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 42px 0;
+      }
+
+      .content {
+        max-width: 620px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: clamp(14px, 3vw, 24px);
+        margin: 0 0 18px;
+      }
+
+      h1 {
+        margin: 0;
+        color: #102d4e;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .logo {
+        display: block;
+        width: clamp(72px, 12vw, 132px);
+        height: auto;
+        flex: 0 0 auto;
+      }
+
+      .intro {
+        margin: 0 0 28px;
+        max-width: 58ch;
+        color: var(--muted);
+        font-size: clamp(1.08rem, 2vw, 1.35rem);
+        line-height: 1.55;
+      }
+
+      .features {
+        display: grid;
+        gap: 12px;
+        margin: 0 0 32px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .features li {
+        display: grid;
+        grid-template-columns: 16px 1fr;
+        gap: 12px;
+        align-items: start;
+        color: #2d3744;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .features li::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        margin-top: 0.45em;
+        border-radius: 50%;
+        background: var(--warm);
+        box-shadow: 0 0 0 4px rgba(243, 178, 63, 0.18);
+      }
+
+      .download {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 22px;
+        border-radius: 6px;
+        color: white;
+        background: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 12px 24px rgba(15, 118, 110, 0.22);
+      }
+
+      .download:hover,
+      .download:focus-visible {
+        background: var(--accent-dark);
+      }
+
+      .device {
+        margin: 0;
+      }
+
+      .device img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 22px 60px rgba(33, 44, 58, 0.16);
+      }
+
+      @media (max-width: 820px) {
+        main {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding: 34px 0 44px;
+        }
+
+        .device {
+          order: -1;
+        }
+      }
+
+      @media (max-width: 460px) {
+        .brand {
+          align-items: flex-start;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello from AAC Jet 🚀</h1>
+    <main>
+      <section class="content" aria-labelledby="page-title">
+        <div class="brand">
+          <img class="logo" src="files/logo.png" alt="AAC Jet logo">
+          <h1 id="page-title">AAC Jet!</h1>
+        </div>
+        <p class="intro">
+          A simple communication board app built for everyday use, including older Android devices and small screens.
+        </p>
+        <ul class="features">
+          <li>Made for real family life, where children can easily drop or damage devices.</li>
+          <li>Designed to run on older hardware, even devices manufactured in 2011.</li>
+          <li>No setup required: organise images into folders and subfolders, copy them onto the device like a flash drive, and the app builds the scrollable communication board automatically.</li>
+          <li>Pinch-to-zoom resizes cards easily, with support for landscape and portrait modes on phones, tablets, and low-resolution screens.</li>
+          <li>Includes keyboard input for fast communication.</li>
+        </ul>
+        <a class="download" href="files/aacjet102.apk" download>Download AAC Jet APK</a>
+      </section>
+
+      <figure class="device">
+        <img src="files/tablet1.png" alt="AAC Jet communication board shown on a tablet">
+      </figure>
+    </main>
   </body>
 </html>
